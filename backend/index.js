@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
 import regionRoutes from './routes/regionRoutes.js';
+import placeRoutes from './routes/placeRoutes.js'; 
 
 dotenv.config();
 connectDB();
@@ -16,6 +17,7 @@ app.get('/', (_req, res) => {
 });
 
 app.use('/api/regions', regionRoutes);
+app.use('/api/places', placeRoutes);
 const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
