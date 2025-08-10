@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #1a1a1a;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f9a826; /* Saffron accent color */
+  text-decoration: none;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #f9a826;
+}
