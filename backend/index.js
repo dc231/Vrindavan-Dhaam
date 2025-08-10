@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
+import regionRoutes from './routes/regionRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -14,6 +15,7 @@ app.get('/', (_req, res) => {
     res.json({ message: "Welcome to the Mathura Darshan API!" });
 });
 
+app.use('/api/regions', regionRoutes);
 const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
