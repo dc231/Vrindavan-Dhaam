@@ -1,12 +1,12 @@
 .title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #f9a826;
-}
+   text-align: center;
+   font-size: 2.5rem;
+   margin-bottom: 2rem;
+   color: #f57c00; 
+ }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
+ .grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 1.5rem;
+ }

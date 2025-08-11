@@ -5,5 +5,5 @@ const API = axios.create({
 });
 
 export const getRegions = () => API.get('/regions');
-
 export const getPlacesByRegion = (regionName) => API.get(`/places?region=${regionName}`);
+export const getPlaceById = (id) => API.get(`/places/${id}`);
