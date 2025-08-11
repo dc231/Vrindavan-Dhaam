@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';         
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <a href="/" className={styles.title}>
+      <Link to="/" className={styles.title}>
         Braj Darshan
-      </a>
+      </Link>
       <ul className={styles.links}>
-        <li><a href="/region/Mathura">Mathura</a></li>
-        <li><a href="/region/Vrindavan">Vrindavan</a></li>
-        <li><a href="/region/Goverdhan">Goverdhan</a></li>
-        <li><a href="/region/Barsana">Barsana</a></li> 
-        <li><a href="/region/Nandgaon">Nandgaon</a></li>
+        <li><Link to="/region/Mathura">Mathura</Link></li>
+        <li><Link to="/region/Vrindavan">Vrindavan</Link></li>
+        <li><Link to="/region/Goverdhan">Goverdhan</Link></li>
+        <li><Link to="/region/Barsana">Barsana</Link></li> 
+        <li><Link to="/region/Nandgaon">Nandgaon</Link></li>
       </ul>
     </nav>
   );
