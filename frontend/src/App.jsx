@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import RegionPage from './pages/RegionPage';
 import PlaceDetailsPage from './pages/PlaceDetailsPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/region/:regionName" element={<RegionPage />} />
           <Route path="/place/:id" element={<PlaceDetailsPage />} />
+          <Route path="/register" element={<RegisterPage />} /> 
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </main>
     </BrowserRouter>

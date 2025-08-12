@@ -30,3 +30,40 @@
 .links a:hover {
   color: #f57c00;
 }
+
+.navLeft, .navRight {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.authLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loginButton {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.loginButton:hover {
+  background-color: #e0e0e0;
+}
+
+.registerButton {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #f57c00;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.registerButton:hover {
+  background-color: #e67e22;
+}

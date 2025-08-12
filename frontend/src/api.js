@@ -7,3 +7,6 @@ const API = axios.create({
 export const getRegions = () => API.get('/regions');
 export const getPlacesByRegion = (regionName) => API.get(`/places?region=${regionName}`);
 export const getPlaceById = (id) => API.get(`/places/${id}`);
+
+export const loginUser = (formData) => API.post('/users/login', formData);
+export const registerUser = (formData) => API.post('/users/register', formData);
