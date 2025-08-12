@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className={styles.navRight}>
         {authUser ? (
         <>
-          <span className={styles.userName}>Hello, {authUser.name}</span>
+          <Link to="/profile" className={styles.userName}>Hello, {authUser.name}</Link>
           <button onClick={logoutHandler} className={styles.logoutButton}>Logout</button>
         </>
         ) : (

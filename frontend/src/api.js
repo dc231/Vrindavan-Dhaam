@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API = axios.create({
   baseURL: 'http://localhost:5001/api',
+  withCredentials: true
 });
 
 export const getRegions = () => API.get('/regions');
@@ -11,3 +12,6 @@ export const getPlaceById = (id) => API.get(`/places/${id}`);
 export const loginUser = (formData) => API.post('/users/login', formData);
 export const registerUser = (formData) => API.post('/users/register', formData);
 export const logoutUser = () => API.post('/users/logout');
+
+export const getUserProfile = () => API.get('/users/profile');
+export const updateUserProfile = (userData) => API.put('/users/profile', userData);

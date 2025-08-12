@@ -5,13 +5,18 @@ import connectDB from './config/db.js';
 import regionRoutes from './routes/regionRoutes.js';
 import placeRoutes from './routes/placeRoutes.js'; 
 import userRoutes from './routes/userRoutes.js';
+import cookieParser from 'cookie-parser';
 
 dotenv.config();
 connectDB();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+}));
 app.use(express.json());
+app.use(cookieParser());
 
 app.get('/', (_req, res) => {
     res.json({ message: "Welcome to the Mathura Darshan API!" });
