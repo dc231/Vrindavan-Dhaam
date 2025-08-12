@@ -67,3 +67,24 @@
 .registerButton:hover {
   background-color: #e67e22;
 }
+
+.userName {
+  font-weight: 500;
+  color: #333;
+}
+
+.logoutButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #f57c00;
+  background-color: transparent;
+  color: #f57c00;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #f57c00;
+  color: #fff;
+}

@@ -1,8 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';         
 import styles from './Navbar.module.css';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { logoutUser } from '../api';
 
 const Navbar = () => {
+  const { authUser, setAuthUser } = useAuth();
+  const navigate = useNavigate();
+
+  const logoutHandler = async () => {
+    try {
+      await logoutUser();
+      setAuthUser(null);
+      navigate('/login');
+    } catch (error) {
+      console.error('Failed to logout:', error);
+    }
+  };
   return (
     <nav className={styles.navbar}>
       <div className={styles.navLeft}>
@@ -18,8 +33,17 @@ const Navbar = () => {
         </ul>
       </div>
       <div className={styles.navRight}>
-        <Link to="/login" className={styles.loginButton}>Login</Link>
-        <Link to="/register" className={styles.registerButton}>Sign Up</Link>
+        {authUser ? (
+        <>
+          <span className={styles.userName}>Hello, {authUser.name}</span>
+          <button onClick={logoutHandler} className={styles.logoutButton}>Logout</button>
+        </>
+        ) : (
+        <>
+          <Link to="/login" className={styles.loginButton}>Login</Link>
+          <Link to="/register" className={styles.registerButton}>Sign Up</Link>
+        </>
+        )}
       </div>
     </nav>
   );
