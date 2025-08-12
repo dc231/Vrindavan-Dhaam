@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { registerUser } from '../api';
 import styles from './AuthForm.module.css';
 import { useAuth } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const RegisterPage = () => {
   const [name, setName] = useState('');
@@ -15,16 +16,16 @@ const RegisterPage = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert('Passwords do not match');
+      toast.error('Passwords do not match');
     } else {
       try {
-        const { data } = await registerUser({ name, email, password });
-        console.log(data); 
+        const { data } = await registerUser({ name, email, password }); 
         setAuthUser(data);
+        toast.success('Registration Successful!');
         navigate('/');
       } catch (error) {
         console.error('Failed to register:', error);
-        alert('Failed to register. User may already exist.');
+        toast.error('Failed to register. User may already exist.');
       }
     }
   };

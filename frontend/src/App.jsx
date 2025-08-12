@@ -5,10 +5,12 @@ import RegionPage from './pages/RegionPage';
 import PlaceDetailsPage from './pages/PlaceDetailsPage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <BrowserRouter>
+    <Toaster />
       <Navbar />
       <main style={{ padding: '1rem 5%' }}>
         <Routes>

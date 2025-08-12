@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../api';
 import styles from './AuthForm.module.css'; 
 import { useAuth } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -14,12 +15,12 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const { data } = await loginUser({ email, password });
-      console.log(data);
       setAuthUser(data);
+      toast.success('Login Successful!');
       navigate('/');
     } catch (error) {
       console.error('Failed to login:', error);
-      alert('Invalid credentials');
+      toast.error('Invalid email or password.');
     }
   };
 
