@@ -9,6 +9,8 @@ import { Toaster } from 'react-hot-toast';
 import ProfilePage from './pages/ProfilePage';
 import UserListPage from './pages/UserListPage';
 import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboardLayout from './pages/AdminDashboardLayout';
+import AdminRoute from './components/AdminRoute';
 
 function App() {
   return (
@@ -23,8 +25,14 @@ function App() {
           <Route path="/register" element={<RegisterPage />} /> 
           <Route path="/login" element={<LoginPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/admin/userlist" element={<UserListPage />} />
+
           <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin" element={<AdminRoute />}>
+            <Route element={<AdminDashboardLayout />}>
+              <Route path="userlist" element={<UserListPage />} />
+            </Route>
+          </Route>
+          
         </Routes>
       </main>
     </BrowserRouter>

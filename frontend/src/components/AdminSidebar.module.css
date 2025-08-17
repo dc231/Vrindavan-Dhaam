@@ -1,0 +1,30 @@
+.sidebar {
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  width: 240px;
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.link, .active {
+  padding: 1rem 1.5rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+}
+
+.link:hover {
+  background-color: #f4f4f4;
+}
+
+.active {
+  border-left: 4px solid #f57c00;
+  color: #f57c00;
+  background-color: #fef5e7;
+}
