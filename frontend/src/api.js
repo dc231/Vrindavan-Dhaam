@@ -15,3 +15,5 @@ export const logoutUser = () => API.post('/users/logout');
 
 export const getUserProfile = () => API.get('/users/profile');
 export const updateUserProfile = (userData) => API.put('/users/profile', userData);
+
+export const getAllUsers = () => API.get('/users');

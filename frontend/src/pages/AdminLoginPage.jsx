@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { loginUser } from '../api';
-import styles from './AuthForm.module.css'; 
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
+import styles from './AuthForm.module.css';
 
-const LoginPage = () => {
+const AdminLoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -15,19 +15,29 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const { data } = await loginUser({ email, password });
-      setAuthUser(data);
-      toast.success('Login Successful!');
-      navigate('/');
+
+      if (data && data.isAdmin) {
+        setAuthUser(data);
+        toast.success('Admin Login Successful!');
+        navigate('/admin/userlist');
+      } else {
+        
+        toast.error('Not authorized as an admin.');
+      }
     } catch (error) {
-      console.error('Failed to login:', error);
-      toast.error('Invalid email or password.');
+      toast.error('Invalid credentials.');
     }
   };
 
   return (
     <div className={styles.formContainer}>
       <form onSubmit={submitHandler}>
-        <h1>Sign In</h1>
+        <h1>Admin Login</h1>
+        <div className={styles.demoBox}>
+            <strong>Admin Credentials:</strong><br />
+            Email: youradmin@email.com<br />
+            Password: youradminpassword
+        </div>
         <div className={styles.formGroup}>
           <label>Email Address</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -36,16 +46,13 @@ const LoginPage = () => {
           <label>Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button type="submit" className={styles.submitButton}>Sign In</button>
+        <button type="submit" className={styles.submitButton}>Login as Admin</button>
         <div className={styles.switchForm}>
-          New Customer? <Link to="/register">Register</Link>
-        </div>
-        <div className={styles.adminLinkContainer}>
-          <Link to="/admin/login">Login as an Admin</Link>
+          <Link to="/login">User Login</Link>
         </div>
       </form>
     </div>
   );
 };
 
-export default LoginPage;
+export default AdminLoginPage;

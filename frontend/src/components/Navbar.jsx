@@ -38,6 +38,9 @@ const Navbar = () => {
       <div className={styles.navRight}>
         {authUser ? (
         <>
+          {authUser.isAdmin && (
+            <Link to="/admin/userlist" className={styles.adminLink}>Admin</Link>
+          )}
           <Link to="/profile" className={styles.userName}>Hello, {authUser.name}</Link>
           <button onClick={logoutHandler} className={styles.logoutButton}>Logout</button>
         </>
