@@ -1,0 +1,116 @@
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f57c00;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.cardImage {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.cardHeader h2 {
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+}
+
+.rating {
+    background-color: #f57c00;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.location {
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.amenities {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.price span {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: normal;
+    margin-left: 0.2rem;
+}
+
+.bookButton {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f57c00;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bookButton:hover {
+  background-color: #e67e22;
+}

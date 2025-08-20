@@ -62,6 +62,8 @@ const Navbar = () => {
           <>
             <Link to="/profile" className={styles.navButton} onClick={handleLinkClick}>My Profile</Link>
             <Link to="/vehicles" className={styles.navButton} onClick={handleLinkClick}>Book a Vehicle</Link>
+            <Link to="/hotels" onClick={handleLinkClick}>Book a Hotel</Link>
+            <Link to="/packages" onClick={handleLinkClick}>Tour Packages</Link>
             {authUser.isAdmin && (
               <Link to="/admin/userlist" onClick={handleLinkClick}>Admin</Link>
             )}

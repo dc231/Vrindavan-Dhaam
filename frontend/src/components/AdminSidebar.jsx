@@ -24,6 +24,12 @@ const AdminSidebar = () => {
         >
           Vehicles
         </NavLink>
+        <NavLink to="/admin/hotels" className={({ isActive }) => isActive ? styles.active : styles.link}>
+          Hotels
+        </NavLink>
+        <NavLink to="/admin/packages/create" className={({ isActive }) => isActive ? styles.active : styles.link}>
+          Packages
+        </NavLink>
       </nav>
     </aside>
   );

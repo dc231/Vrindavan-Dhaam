@@ -19,3 +19,7 @@ export const updateUserProfile = (userData) => API.put('/users/profile', userDat
 export const getAllUsers = () => API.get('/users');
 export const createVehicle = (vehicleData) => API.post('/vehicles', vehicleData);
 export const getVehicles = () => API.get('/vehicles');
+export const getHotels = () => API.get('/hotels');
+export const createHotel = (hotelData) => API.post('/hotels', hotelData);
+export const createTourPackage = (packageData) => API.post('/packages', packageData);
+export const getTourPackages = () => API.get('/packages');

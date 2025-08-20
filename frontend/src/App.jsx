@@ -13,6 +13,12 @@ import AdminDashboardLayout from "./pages/AdminDashboardLayout";
 import AdminRoute from "./components/AdminRoute";
 import VehicleCreatePage from "./pages/VehicleCreatePage";
 import VehicleListPage from "./pages/VehicleListPage";
+import VehicleListPageUser from './pages/VehicleListPageUser';
+import HotelListPage from './pages/HotelListPage';
+import HotelCreatePage from './pages/HotelCreatePage';
+import HotelListPageAdmin from './pages/HotelListPageAdmin';
+import PackageCreatePage from './pages/PackageCreatePage';
+import PackageListPage from './pages/PackageListPage';
 
 function App() {
   return (
@@ -27,6 +33,9 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/vehicles" element={<VehicleListPageUser />} />
+          <Route path="/hotels" element={<HotelListPage />} />
+          <Route path="/packages" element={<PackageListPage />} />
 
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminRoute />}>
@@ -35,6 +44,13 @@ function App() {
               <Route path="vehicles">
                 <Route index element={<VehicleListPage />} />
                 <Route path="create" element={<VehicleCreatePage />} />
+              </Route>
+              <Route path="hotels">
+                <Route index element={<HotelListPageAdmin />} />
+                <Route path="create" element={<HotelCreatePage />} />
+              </Route>
+              <Route path="packages">
+                <Route path="create" element={<PackageCreatePage />} />
               </Route>
             </Route>
           </Route>
