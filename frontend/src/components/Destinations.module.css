@@ -1,0 +1,77 @@
+.destinations {
+  padding: 5rem 0;
+  background: white;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.sectionHeader p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.destinationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.destinationCard {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+.destinationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+.destinationImage {
+  height: 200px;
+  overflow: hidden;
+}
+.destinationImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.destinationCard:hover .destinationImage img {
+  transform: scale(1.05);
+}
+.destinationContent {
+  padding: 1rem;
+}
+.destinationHeader {
+  margin-bottom: 1rem;
+}
+.destinationHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.destinationDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.destinationFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}

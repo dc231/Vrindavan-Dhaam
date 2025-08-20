@@ -14,7 +14,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .card {
@@ -24,8 +24,15 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 320px; 
 }
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
 
 .cardImage {
   width: 100%;
@@ -34,21 +41,22 @@
 }
 
 .cardContent {
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .cardContent h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .type {
   background-color: #f0f0f0;
   color: #555;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 4px;
   align-self: flex-start;
   margin-bottom: 1rem;
@@ -56,7 +64,7 @@
 }
 
 .price {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #f57c00;
   margin-bottom: 1rem;
@@ -66,6 +74,8 @@
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
   color: #666;
+  border-top: 1px solid #eee; 
+  padding-top: 1rem;
 }
 
 .bookButton {

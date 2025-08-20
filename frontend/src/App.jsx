@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import RegionPage from "./pages/RegionPage";
@@ -19,13 +19,16 @@ import HotelCreatePage from './pages/HotelCreatePage';
 import HotelListPageAdmin from './pages/HotelListPageAdmin';
 import PackageCreatePage from './pages/PackageCreatePage';
 import PackageListPage from './pages/PackageListPage';
+import Footer from './components/Footer';
 
 function App() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   return (
-    <BrowserRouter>
+    <>
       <Toaster />
       <Navbar />
-      <main style={{ padding: "1rem 5%" }}>
+      <main >
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/region/:regionName" element={<RegionPage />} />
@@ -56,7 +59,8 @@ function App() {
           </Route>
         </Routes>
       </main>
-    </BrowserRouter>
+      {isHomePage && <Footer />}
+    </>
   );
 }
 
