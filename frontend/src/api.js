@@ -17,3 +17,5 @@ export const getUserProfile = () => API.get('/users/profile');
 export const updateUserProfile = (userData) => API.put('/users/profile', userData);
 
 export const getAllUsers = () => API.get('/users');
+export const createVehicle = (vehicleData) => API.post('/vehicles', vehicleData);
+export const getVehicles = () => API.get('/vehicles');
