@@ -1,6 +1,6 @@
-# Braj Darshan 🕉️
+# Vrindavan Dhaam
 
-Welcome to **Braj Darshan**, a full-stack MERN application designed to be a comprehensive digital guide and booking platform for the sacred Braj region, including Mathura, Vrindavan, Goverdhan, Barsana, and Nandgaon. This application provides users with a beautiful and intuitive interface to explore holy sites and plan their pilgrimage, while offering a powerful dashboard for administrators to manage the platform's content.
+Welcome to **Vrindavan Dhaam**, a full-stack MERN application designed to be a comprehensive digital guide and booking platform for the sacred Braj region, including Mathura, Vrindavan, Goverdhan, Barsana, and Nandgaon. This application provides users with a beautiful and intuitive interface to explore holy sites and plan their pilgrimage, while offering a powerful dashboard for administrators to manage the platform's content.
 
 Made with ❤️ by Dheeraj Chaudhary
 
@@ -67,8 +67,8 @@ To get this project running on your local machine, please follow these steps.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/dc231/braj-darshan.git](https://github.com/dc231/braj-darshan.git)
-    cd braj-darshan
+    git clone [https://github.com/dc231/Vrindavan-Dhaam.git](https://github.com/dc231/Vrindavan-Dhaam.git)
+    cd vrindavan-dhaam
     ```
 
 2.  **Install Backend Dependencies:**
